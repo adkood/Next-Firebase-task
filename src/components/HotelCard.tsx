@@ -29,7 +29,9 @@ const HotelCard = ({ product }: any) => {
             <Stack direction="column" spacing={2} w="100%" mt={{ base: '5px !important', sm: 0 }}>
                 <Flex justifyContent="space-between">
                     <chakra.h3 fontSize={{ base: 'lg', md: 'xl' }} fontWeight="bold" color={"cornflowerblue"}>
-                        {product.hotelName}
+                        <Link href={`/displayHotel/${product.id}`}>
+                            {product.hotelName}
+                        </Link>
                     </chakra.h3>
                     <chakra.h3 fontSize={"sm"} fontWeight="bold">
                         Starting From: Rs.{product.hotelStartingPrice}
@@ -59,7 +61,7 @@ const HotelCard = ({ product }: any) => {
                         {product.hotelStarRating} Star
                     </Text>
                     <Stack direction="row" spacing={1} mb={4}>
-                        <Link href={`/${product.id}`} passHref>
+                        <Link href={`/updateDetails/${product.id}`} passHref>
                             <Box as="a" color="cornflowerblue" textDecoration="none" _hover={{ textDecoration: "underline" }}>
                                 <Text fontSize="sm">EDIT DETAILS...</Text>
                             </Box>
